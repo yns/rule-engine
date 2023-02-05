@@ -5,7 +5,10 @@ import com.yns.model.Education;
 import com.yns.model.Gender;
 import com.yns.model.Person;
 import com.yns.rule.AgeOlderThan30Rule;
+import com.yns.rule.FunctionalRule;
 import com.yns.rule.GenderIsFemaleRule;
+import com.yns.rule.GenderIsMaleRule;
+import com.yns.rule.base.IFunctionalRule;
 import com.yns.rule.base.IRule;
 
 import java.util.ArrayList;
@@ -15,11 +18,21 @@ public class Main {
     public static void main(String[] args) {
 
         List<IRule> ruleList = new ArrayList<>();
-        
         ruleList.add(new AgeOlderThan30Rule());
         ruleList.add(new GenderIsFemaleRule());
+        ruleList.add(new GenderIsMaleRule());
 
-        RuleEngine engine = new RuleEngine(ruleList);
+        List<IFunctionalRule> functionalRules = new ArrayList<>();
+        FunctionalRule funcRule = new FunctionalRule(o -> {
+            if (o.name().equals("Name9")) {
+                return true;
+            }
+            return false;
+        });
+
+       functionalRules.add(funcRule);
+
+        RuleEngine engine = new RuleEngine(ruleList, functionalRules);
 
         List<Person> people = new ArrayList<>();
 
