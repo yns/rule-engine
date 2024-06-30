@@ -6,4 +6,7 @@ public interface IRule<T> {
 
     boolean execute(T instance);
 
+    default ProcessType processType() {
+        return ProcessType.SYNC;
+    }
 }

@@ -8,7 +8,6 @@ import com.yns.rule.AgeOlderThan30Rule;
 import com.yns.rule.FunctionalRule;
 import com.yns.rule.GenderIsFemaleRule;
 import com.yns.rule.GenderIsMaleRule;
-import com.yns.rule.base.IFunctionalRule;
 import com.yns.rule.base.IRule;
 
 import java.util.ArrayList;
@@ -22,7 +21,6 @@ public class Main {
         ruleList.add(new GenderIsFemaleRule());
         ruleList.add(new GenderIsMaleRule());
 
-        List<IFunctionalRule> functionalRules = new ArrayList<>();
         FunctionalRule funcRule = new FunctionalRule(o -> {
             if (o.name().equals("Name9")) {
                 return true;
@@ -30,9 +28,9 @@ public class Main {
             return false;
         });
 
-       functionalRules.add(funcRule);
+       ruleList.add(funcRule);
 
-        RuleEngine engine = new RuleEngine(ruleList, functionalRules);
+        RuleEngine engine = new RuleEngine(ruleList);
 
         List<Person> people = new ArrayList<>();
 
@@ -46,6 +44,6 @@ public class Main {
         people.add(new Person("Name8","Surname 8", Gender.FEMALE, 46, Education.PRIMARY_SCHOOL, "Address8"));
         people.add(new Person("Name9","Surname 9", Gender.FEMALE, 55, Education.HIGH_SCHOOL, "Address9"));
 
-        engine.execute(people);
+        engine.start(people);
     }
 }

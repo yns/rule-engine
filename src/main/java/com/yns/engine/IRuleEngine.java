@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface IRuleEngine<T> {
 
-    void execute(List<T> dataList);
+    void start(List<T> dataList);
 }
