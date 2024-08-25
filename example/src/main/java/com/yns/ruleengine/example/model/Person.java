@@ -1,4 +1,4 @@
-package com.yns.model;
+package com.yns.ruleengine.example.model;
 
 public record Person(String name,
                      String surname,

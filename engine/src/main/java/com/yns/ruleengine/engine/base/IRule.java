@@ -1,4 +1,4 @@
-package com.yns.rule.base;
+package com.yns.ruleengine.engine.base;
 
 public interface IRule<T> {
 

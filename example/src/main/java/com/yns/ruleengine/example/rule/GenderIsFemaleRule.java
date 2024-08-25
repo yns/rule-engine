@@ -1,9 +1,11 @@
-package com.yns.rule;
+package com.yns.ruleengine.example.rule;
 
-import com.yns.model.Gender;
-import com.yns.model.Person;
-import com.yns.rule.base.IRule;
-import com.yns.rule.base.ProcessType;
+
+import com.yns.ruleengine.aspect.LogExecutionTime;
+import com.yns.ruleengine.engine.base.IRule;
+import com.yns.ruleengine.engine.base.ProcessType;
+import com.yns.ruleengine.example.model.Gender;
+import com.yns.ruleengine.example.model.Person;
 
 public class GenderIsFemaleRule implements IRule<Person> {
     @Override
@@ -12,6 +14,7 @@ public class GenderIsFemaleRule implements IRule<Person> {
     }
 
     @Override
+    @LogExecutionTime
     public boolean execute(Person instance) {
         return instance.gender() == Gender.FEMALE;
     }

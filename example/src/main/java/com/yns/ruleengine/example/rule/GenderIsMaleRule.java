@@ -1,8 +1,9 @@
-package com.yns.rule;
+package com.yns.ruleengine.example.rule;
 
-import com.yns.model.Gender;
-import com.yns.model.Person;
-import com.yns.rule.base.IRule;
+
+import com.yns.ruleengine.engine.base.IRule;
+import com.yns.ruleengine.example.model.Gender;
+import com.yns.ruleengine.example.model.Person;
 
 public class GenderIsMaleRule implements IRule<Person> {
 
@@ -14,5 +15,6 @@ public class GenderIsMaleRule implements IRule<Person> {
     @Override
     public boolean execute(Person instance) {
         return instance.gender() == Gender.MALE;
+
     }
 }

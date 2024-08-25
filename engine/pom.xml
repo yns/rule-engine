@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.yns</groupId>
-    <artifactId>rule-engine-main</artifactId>
+    <artifactId>rule-engine</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>engine</module>
-        <module>example</module>
-    </modules>
+    <packaging>jar</packaging>
+
+    <name>engine</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -34,7 +30,7 @@
 
     <build>
         <plugins>
-            <plugin>
+             <plugin>
                 <groupId>dev.aspectj</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>1.13.1</version>
@@ -61,7 +57,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 </project>

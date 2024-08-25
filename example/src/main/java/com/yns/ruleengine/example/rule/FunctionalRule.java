@@ -1,7 +1,8 @@
-package com.yns.rule;
+package com.yns.ruleengine.example.rule;
 
-import com.yns.model.Person;
-import com.yns.rule.base.IRule;
+
+import com.yns.ruleengine.engine.base.IRule;
+import com.yns.ruleengine.example.model.Person;
 
 import java.util.function.Function;
 
@@ -17,8 +18,6 @@ public class FunctionalRule implements IRule<Person> {
     public FunctionalRule(Function<Person, Boolean> function) {
         this.function = function;
     }
-
-
 
     @Override
     public boolean execute(Person instance) {
